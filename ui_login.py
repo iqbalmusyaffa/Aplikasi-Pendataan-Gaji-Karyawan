@@ -11,7 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Form(object):
+class Ui_Login(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(640, 480)
@@ -78,12 +78,13 @@ class Ui_Form(object):
         self.label_3.setScaledContents(True)
         self.label_3.setWordWrap(False)
         self.label_3.setObjectName("label_3")
-        self.lineEdit = QtWidgets.QLineEdit(self.menu1)
-        self.lineEdit.setGeometry(QtCore.QRect(120, 130, 361, 31))
-        self.lineEdit.setObjectName("lineEdit")
-        self.lineEdit_2 = QtWidgets.QLineEdit(self.menu1)
-        self.lineEdit_2.setGeometry(QtCore.QRect(120, 210, 361, 31))
-        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.username = QtWidgets.QLineEdit(self.menu1)
+        self.username.setGeometry(QtCore.QRect(120, 130, 361, 31))
+        self.username.setObjectName("lineEdit")
+        self.password = QtWidgets.QLineEdit(self.menu1)
+        self.password.setGeometry(QtCore.QRect(120, 210, 361, 31))
+        self.password.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.password.setObjectName("lineEdit_2")
         self.label_4 = QtWidgets.QLabel(self.menu1)
         self.label_4.setGeometry(QtCore.QRect(140, 100, 47, 13))
         self.label_4.setText("")
@@ -108,9 +109,9 @@ class Ui_Form(object):
         self.label_6.setFont(font)
         self.label_6.setAlignment(QtCore.Qt.AlignJustify|QtCore.Qt.AlignVCenter)
         self.label_6.setObjectName("label_6")
-        self.pushButton = QtWidgets.QPushButton(self.menu1)
-        self.pushButton.setGeometry(QtCore.QRect(230, 280, 121, 41))
-        self.pushButton.setObjectName("pushButton")
+        self.tombol1 = QtWidgets.QPushButton(self.menu1)
+        self.tombol1.setGeometry(QtCore.QRect(230, 280, 121, 41))
+        self.tombol1.setObjectName("tombol1")
         self.tombol2 = QtWidgets.QPushButton(self.menu1)
         self.tombol2.setGeometry(QtCore.QRect(360, 280, 121, 41))
         self.tombol2.setStyleSheet("QPushButton{\n"
@@ -131,7 +132,7 @@ class Ui_Form(object):
         self.label.setText(_translate("Form", "LOGIN"))
         self.label_5.setText(_translate("Form", "Username"))
         self.label_6.setText(_translate("Form", "Password"))
-        self.pushButton.setText(_translate("Form", "Login"))
+        self.tombol1.setText(_translate("Form", "Login"))
         self.tombol2.setText(_translate("Form", "Register"))
 
 

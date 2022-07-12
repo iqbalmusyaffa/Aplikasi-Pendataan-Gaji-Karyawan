@@ -15,6 +15,8 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(640, 480)
+        Form.setMinimumSize(QtCore.QSize(640, 480))
+        Form.setMaximumSize(QtCore.QSize(640, 480))
         Form.setStyleSheet("*{\n"
 "background:#A7CECB; \n"
 "}\n"
@@ -80,6 +82,7 @@ class Ui_Form(object):
         self.lineEdit.setObjectName("lineEdit")
         self.lineEdit_2 = QtWidgets.QLineEdit(self.menu1)
         self.lineEdit_2.setGeometry(QtCore.QRect(120, 210, 361, 31))
+        self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.label_4 = QtWidgets.QLabel(self.menu1)
         self.label_4.setGeometry(QtCore.QRect(140, 100, 47, 13))
