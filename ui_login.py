@@ -109,19 +109,19 @@ class Ui_Login(object):
         self.label_6.setFont(font)
         self.label_6.setAlignment(QtCore.Qt.AlignJustify|QtCore.Qt.AlignVCenter)
         self.label_6.setObjectName("label_6")
-        self.tombol1 = QtWidgets.QPushButton(self.menu1)
-        self.tombol1.setGeometry(QtCore.QRect(230, 280, 121, 41))
-        self.tombol1.setObjectName("tombol1")
-        self.tombol2 = QtWidgets.QPushButton(self.menu1)
-        self.tombol2.setGeometry(QtCore.QRect(360, 280, 121, 41))
-        self.tombol2.setStyleSheet("QPushButton{\n"
+        self.login = QtWidgets.QPushButton(self.menu1)
+        self.login.setGeometry(QtCore.QRect(230, 280, 121, 41))
+        self.login.setObjectName("login")
+        self.register = QtWidgets.QPushButton(self.menu1)
+        self.register.setGeometry(QtCore.QRect(360, 280, 121, 41))
+        self.register.setStyleSheet("QPushButton{\n"
 "font-size:20px;\n"
 "color:#fff;\n"
 "border:none;\n"
 "border-radius:10px;\n"
 "background:#005b8f;\n"
 "}")
-        self.tombol2.setObjectName("tombol2")
+        self.register.setObjectName("register")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -132,8 +132,8 @@ class Ui_Login(object):
         self.label.setText(_translate("Form", "LOGIN"))
         self.label_5.setText(_translate("Form", "Username"))
         self.label_6.setText(_translate("Form", "Password"))
-        self.tombol1.setText(_translate("Form", "Login"))
-        self.tombol2.setText(_translate("Form", "Register"))
+        self.login.setText(_translate("Form", "Login"))
+        self.register.setText(_translate("Form", "Register"))
 
 
 if __name__ == "__main__":

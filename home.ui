@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>480</height>
+    <width>700</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>640</width>
-    <height>480</height>
+    <width>700</width>
+    <height>500</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>640</width>
-    <height>480</height>
+    <width>700</width>
+    <height>500</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -40,15 +40,28 @@ border:none;
 font-size: 20px;
 font-weight:bold;
 padding-left:10px;
+}
+QPushButton{
+font-size:15px;
+color:#fff;
+border:none;
+border-radius:5px;
+background:#005b8f;
+}
+QPushButton:hover{
+background:#B8B8B8;
+}
+QPushButton:pressed{
+background:#585858;
 }</string>
   </property>
   <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>30</y>
-     <width>541</width>
-     <height>421</height>
+     <y>10</y>
+     <width>601</width>
+     <height>451</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -60,8 +73,8 @@ padding-left:10px;
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>10</y>
+      <x>220</x>
+      <y>0</y>
       <width>161</width>
       <height>41</height>
      </rect>
@@ -85,7 +98,7 @@ padding-left:10px;
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>60</y>
+      <y>50</y>
       <width>121</width>
       <height>21</height>
      </rect>
@@ -109,8 +122,8 @@ padding-left:10px;
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>90</y>
-      <width>461</width>
+      <y>80</y>
+      <width>551</width>
       <height>31</height>
      </rect>
     </property>
@@ -119,8 +132,8 @@ padding-left:10px;
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>160</y>
-      <width>461</width>
+      <y>150</y>
+      <width>551</width>
       <height>31</height>
      </rect>
     </property>
@@ -129,7 +142,7 @@ padding-left:10px;
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>130</y>
+      <y>120</y>
       <width>101</width>
       <height>21</height>
      </rect>
@@ -153,8 +166,8 @@ padding-left:10px;
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>230</y>
-      <width>461</width>
+      <y>220</y>
+      <width>551</width>
       <height>31</height>
      </rect>
     </property>
@@ -164,7 +177,7 @@ padding-left:10px;
      <rect>
       <x>30</x>
       <y>290</y>
-      <width>461</width>
+      <width>551</width>
       <height>31</height>
      </rect>
     </property>
@@ -197,7 +210,7 @@ padding-left:10px;
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>200</y>
+      <y>190</y>
       <width>101</width>
       <height>21</height>
      </rect>
@@ -221,7 +234,7 @@ padding-left:10px;
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>270</y>
+      <y>260</y>
       <width>131</width>
       <height>21</height>
      </rect>
@@ -245,8 +258,8 @@ padding-left:10px;
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>350</y>
-      <width>461</width>
+      <y>360</y>
+      <width>551</width>
       <height>31</height>
      </rect>
     </property>
@@ -256,7 +269,7 @@ padding-left:10px;
      <rect>
       <x>30</x>
       <y>330</y>
-      <width>131</width>
+      <width>151</width>
       <height>21</height>
      </rect>
     </property>
@@ -269,10 +282,36 @@ padding-left:10px;
      </font>
     </property>
     <property name="text">
-     <string>Tahun Keluar Kerja</string>
+     <string>Tahun Habis Kontrak</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>410</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Kembali</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>410</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Selesai</string>
     </property>
    </widget>
   </widget>
