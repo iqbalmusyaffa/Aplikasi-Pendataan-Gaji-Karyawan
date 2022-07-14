@@ -39,7 +39,7 @@ class C_Login(QtWidgets.QMainWindow, Ui_Login):
             self.Form.setupUi(self.Form)
             self.close()
         else:
-            self.warning("Gagal","Masukan Username dan Password Dengan Benar")
+            self.warning("Gagal","Masukan Username dan Password Dengan Benar..Jika Belum Register Silahkan Sign Up")
 
     def register_clicked(self):
         self.Form = c_register.C_Register()

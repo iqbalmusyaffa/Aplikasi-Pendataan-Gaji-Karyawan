@@ -129,7 +129,8 @@ class Ui_Home(object):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate(
+            "Form", "Aplikasi Pendataan Gaji Karyawan"))
         self.label_7.setText(_translate("Form", "MENU"))
         self.label_8.setText(_translate("Form", "Nama Karyawan"))
         self.label_9.setText(_translate("Form", "Jabatan"))
