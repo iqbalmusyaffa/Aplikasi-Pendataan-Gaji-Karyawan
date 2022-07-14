@@ -38,7 +38,8 @@ class C_Register(QtWidgets.QMainWindow, Ui_Register):
         conn = pymysql.connect(host="localhost", user="root",password="", db="gaji", port=3306, autocommit=True)
         cur = conn.cursor()
         cur.execute("select * from login where username='"+ usern +"' and password='"+ passw +"'")
-        if (len(cur.fetchone()) > 0):
+        results = cur.fetchall()
+        if results:
             self.warning("Gagal", "Username dan Password sudah dibuat")
             self.Form = c_register.C_Register()
             self.Form.setupUi(self.Form)

@@ -16,14 +16,12 @@ class C_Login(QtWidgets.QMainWindow, Ui_Login):
         mess.setWindowTitle(title)
         mess.setText(message)
         mess.setStandardButtons(QtWidgets.QMessageBox.Ok)
-
         mess.exec_()
     def warning(self,title,message):
         mess=QtWidgets.QMessageBox()
         mess.setWindowTitle(title)
         mess.setText(message)
         mess.setStandardButtons(QtWidgets.QMessageBox.Ok)
-
         mess.exec_()
     def login_clicked(self):
         usern = self.username.text()
@@ -32,7 +30,8 @@ class C_Login(QtWidgets.QMainWindow, Ui_Login):
         cur=conn.cursor()
         query = "select * from login where username=%s and password=%s"
         data=cur.execute(query, (usern,passw))
-        if (len(cur.fetchall())>0):
+        result = cur.fetchall()
+        if result:
             self.messagebox("Berhasil", "Anda sudah Login")
             self.Dialog = QtWidgets.QDialog()
             self.Form = c_home.C_Home()
