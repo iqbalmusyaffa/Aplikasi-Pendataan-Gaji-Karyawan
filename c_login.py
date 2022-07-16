@@ -17,6 +17,7 @@ class C_Login(QtWidgets.QMainWindow, Ui_Login):
         mess.setWindowTitle(title)
         mess.setText(message)
         mess.setStandardButtons(QtWidgets.QMessageBox.Ok)
+        mess.exec_()
     def warning(self,title,message):
         mess=QtWidgets.QMessageBox()
         mess.setWindowTitle(title)
