@@ -3,6 +3,7 @@ import pymysql
 from ui_login import Ui_Login
 import c_home
 import c_register
+import c_login
 class C_Login(QtWidgets.QMainWindow, Ui_Login):
     def __init__(self):
         super().__init__()
@@ -16,7 +17,6 @@ class C_Login(QtWidgets.QMainWindow, Ui_Login):
         mess.setWindowTitle(title)
         mess.setText(message)
         mess.setStandardButtons(QtWidgets.QMessageBox.Ok)
-        mess.exec_()
     def warning(self,title,message):
         mess=QtWidgets.QMessageBox()
         mess.setWindowTitle(title)
@@ -30,8 +30,8 @@ class C_Login(QtWidgets.QMainWindow, Ui_Login):
         cur=conn.cursor()
         query = "select * from login where username=%s and password=%s"
         data=cur.execute(query, (usern,passw))
-        result = cur.fetchall()
-        if result:
+        results = cur.fetchall()
+        if results:
             self.messagebox("Berhasil", "Anda sudah Login")
             self.Dialog = QtWidgets.QDialog()
             self.Form = c_home.C_Home()
@@ -39,7 +39,9 @@ class C_Login(QtWidgets.QMainWindow, Ui_Login):
             self.close()
         else:
             self.warning("Gagal","Masukan Username dan Password Dengan Benar..Jika Belum Register Silahkan Sign Up")
-
+            self.Form = c_login.C_Login()
+            self.Form.setupUi(self.Form)
+            self.close()
     def register_clicked(self):
         self.Form = c_register.C_Register()
         self.Form.show()

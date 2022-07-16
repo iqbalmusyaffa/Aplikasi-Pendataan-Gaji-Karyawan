@@ -52,4 +52,3 @@ class C_Register(QtWidgets.QMainWindow, Ui_Register):
             self.Form = c_login.C_Login()
             self.Form.setupUi(self.Form)
             self.close()
-
