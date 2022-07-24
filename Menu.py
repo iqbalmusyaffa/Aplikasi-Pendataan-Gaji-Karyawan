@@ -16,6 +16,7 @@ class Menu(QMainWindow):
         QMainWindow.__init__(self)
         loadUi('menu.ui', self)
         self.tampilData()
+        self.setWindowTitle('Aplikasi Pendataan Gaji Karyawan')
         self.Btntambah.clicked.connect(self.tambahDataGaji)
         self.tabelgaji.itemSelectionChanged.connect(self.tampilDataGaji)
         self.Btnperbarui.clicked.connect(self.perbaruiDataGaji)
@@ -74,7 +75,7 @@ class Menu(QMainWindow):
                 self.tampilData()
                 self.hapusTeks()
             else:
-                self.tampilPesan('LENGKAPIN data anda dahulu')
+                self.tampilPesan('lengkapi data anda dahulu')
         except:
             self.tampilPesan('Terjadi Kesalahan Saat Menambahkan Data')
 
@@ -83,7 +84,7 @@ class Menu(QMainWindow):
         kata_kunci = self.carinamakaryawan.displayText()
     #membuat koneksi ke server MySQL
         con = pymysql.connect(db='gaji', user='root', password='',host='localhost', port=3306, autocommit=True)
-        #mencari data buku berdasarkan kata kunci yang dimasukkan
+        #mencari data gaji berdasarkan kata kunci yang dimasukkan
         query = "SELECT * FROM tbl_gaji WHERE namakaryawan LIKE '%" + \
             kata_kunci+"%' OR jabatan LIKE '%"+kata_kunci+"%' "
         cursor = con.cursor()
@@ -105,13 +106,13 @@ class Menu(QMainWindow):
             baris = baris+1
 
     def tampilDataGaji(self):
-        #menyimpan detail data buku yang dipilih
-        data = self.tabelgaji.selectedItems()
-        namakaryawan = data[0].text()
-        jabatan = data[1].text()
-        gajipokok = data[2].text()
-        tahunmasukkerja = data[3].text()
-        statuskerja = data[4].text()
+        #menyimpan detail data gaji yang dipilih
+        data              = self.tabelgaji.selectedItems()
+        namakaryawan      = data[0].text()
+        jabatan           = data[1].text()
+        gajipokok         = data[2].text()
+        tahunmasukkerja   = data[3].text()
+        statuskerja       = data[4].text()
         tahunhabiskontrak = data[5].text()
 
         self.EditNama.setText(namakaryawan)
@@ -120,7 +121,7 @@ class Menu(QMainWindow):
         self.EditTahunMasuk.setText(tahunmasukkerja)
         self.EditStatusKerja.setText(statuskerja)
         self.TahunhabisKontrak.setText(tahunhabiskontrak)
-   
+
     def perbaruiDataGaji(self):
         try:
             namakaryawan = self.EditNama.displayText()
@@ -133,9 +134,9 @@ class Menu(QMainWindow):
             if namakaryawan!= "" and jabatan!= "" and gajipokok!= "" and tahunmasukkerja!= "" and statuskerja!= "" and tahunhabiskontrak!= "":
                 #membuat koneksi ke server MySQL
                 con = pymysql.connect(db='gaji', user='root', password='', host='localhost', port=3306, autocommit=True)
-            #memperbauri data 
-                query = "UPDATE tbl_gaji SET jabatan=%s,gajipokok=%s,thnmasuk=%s,statuskerja=%s,thhbskontrak=%s, WHERE namakaryawan=%s"
-                data = (jabatan, gajipokok, int(tahunmasukkerja), statuskerja, int(tahunhabiskontrak), namakaryawan)
+            #memperbarui data 
+                query = "UPDATE tbl_gaji SET jabatan=%s,gajipokok=%s,thnmasuk=%s,statuskerja=%s,thhbskontrak=%s WHERE namakaryawan=%s"
+                data = (jabatan,int(gajipokok),int(tahunmasukkerja),statuskerja,int(tahunhabiskontrak),namakaryawan)
                 cursor = con.cursor()
                 cursor.execute(query, data)
                 con.commit()
@@ -143,11 +144,11 @@ class Menu(QMainWindow):
                 con.close()
             #menampilkan pesan menggunakan fungsi tampilPesan
                 self.tampilPesan('Data berhasil diperbarui!')
-            #menampilkan data buku menggunakan fungsi tampilDataBuku
+            #menampilkan data buku menggunakan fungsi tampilDatagaji
                 self.tampilData()
                 self.hapusTeks()
             else:
-                self.tampilPesan('dipilih dulu datanya')
+                self.tampilPesan('pilih dulu datanya')
         except:
             self.tampilPesan('Terjadi kesalahan saat mengubah data')
 
@@ -189,6 +190,6 @@ class Menu(QMainWindow):
                     self.tampilData()
                     self.hapusTeks()
             else:
-                self.tampilPesan('Pilih dulu bang yang mau dihapus')
+                self.tampilPesan('Pilih dulu data yang mau dihapus')
         except:
             self.tampilPesan('Terjadi Kesalahan saat menghapus data')
