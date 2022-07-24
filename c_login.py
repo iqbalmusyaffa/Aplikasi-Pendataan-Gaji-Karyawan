@@ -1,7 +1,7 @@
 from PyQt5 import QtWidgets
 import pymysql
 from ui_login import Ui_Login
-import c_home
+from Menu import *
 import c_register
 import c_login
 class C_Login(QtWidgets.QMainWindow, Ui_Login):
@@ -35,9 +35,8 @@ class C_Login(QtWidgets.QMainWindow, Ui_Login):
         if results:
             self.messagebox("Berhasil", "Anda sudah Login")
             self.Dialog = QtWidgets.QDialog()
-            self.Form = c_home.C_Home()
-            self.Form.setupUi(self.Form)
             self.close()
+            self.berhasil()
         else:
             self.warning("Gagal","Masukan Username dan Password Dengan Benar..Jika Belum Register Silahkan Sign Up")
             self.Form = c_login.C_Login()
@@ -48,3 +47,6 @@ class C_Login(QtWidgets.QMainWindow, Ui_Login):
         self.Form.show()
         self.close()
 
+    def berhasil(self):
+        self.Form = Menu()
+        self.Form.show()
